@@ -14,6 +14,10 @@ const routerMap = [
     pagePath: '#/context',
     pageTitle: 'Selector',
   },
+  {
+    pagePath: '#/snapshot',
+    pageTitle: 'Snapshot',
+  },
 ]
 
 export default class App extends React.Component {
