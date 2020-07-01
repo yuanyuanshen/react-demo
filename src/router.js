@@ -5,6 +5,7 @@ import Clock from './components/Clock/Clock'
 import Selector from './components/Selector/Selector'
 import Context from './components/LocaleSample/index'
 import Snapshot from './components/Snapshot/index'
+import PureRedux from './components/Redux/PureRedux'
 
 const BasicRoute = () => (
   <HashRouter>
@@ -14,6 +15,7 @@ const BasicRoute = () => (
       <Route exact path="/selector" component={Selector} />
       <Route exact path="/context" component={Context} />
       <Route exact path="/snapshot" component={Snapshot} />
+      <Route exact path="/pureredux" component={PureRedux} />
     </Switch>
   </HashRouter>
 )
