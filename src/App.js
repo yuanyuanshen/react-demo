@@ -22,6 +22,10 @@ const routerMap = [
     pagePath: '#/pureredux',
     pageTitle: 'PureRedux',
   },
+  {
+    pagePath: '#/connect',
+    pageTitle: 'Connect',
+  },
 ]
 
 export default class App extends React.Component {
@@ -37,5 +41,3 @@ export default class App extends React.Component {
     )
   }
 }
-
-

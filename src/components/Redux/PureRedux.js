@@ -1,37 +1,59 @@
 import React from 'react'
+import { combineReducers, bindActionCreators, createStore } from 'redux'
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props)
-    console.log('Clock constructed')
-    this.state = { date: new Date() }
+function run() {
+  const initialState = { count: 0 }
+
+  // reducer
+  const counter = function (state = initialState, action) {
+    switch (action.type) {
+      case 'PLUS_ONE':
+        return { count: state.count + 1 }
+      case 'MINUS_ONE':
+        return { count: state.count - 1 }
+      case 'COUNT':
+        return { count: state.count + action.payload.count }
+      default:
+        break
+    }
+    return state
   }
 
-  componentDidMount() {
-    console.log('Clock did mount')
-    this.timerID = setInterval(() => this.tick(), 1000)
-  }
+  const todos = (state = {}) => state
 
-  componentWillUnmount() {
-    console.log('Clock will unmount')
-    clearInterval(this.timerID)
+  // Action Creator
+  function plusOne() {
+    return { type: 'PLUS_ONE' }
   }
-
-  componentDidUpdate() {
-    console.log('Clock did update')
+  function minusOne() {
+    return { type: 'MINUS_ONE' }
   }
-
-  tick() {
-    this.setState({
-      date: new Date(),
+  function count(count) {
+    return { type: 'COUNT', payload: { count } }
+  }
+  // const store = createStore(counter)
+  const store = createStore(
+    combineReducers({
+      counter,
+      todos,
     })
-  }
-  render() {
-    return (
-      <div>
-        <p>Hello World</p>
-        <div>{this.state.date.toLocaleTimeString()}</div>
-      </div>
-    )
-  }
+  )
+
+  store.subscribe(() => {
+    console.log(store.getState())
+  })
+
+  plusOne = bindActionCreators(plusOne, store.dispatch)
+
+  // store.dispatch(plusOne())
+  plusOne()
+  store.dispatch(minusOne())
+  store.dispatch(count(5))
 }
+
+export default () => (
+  <div>
+    <button onClick={run}>点击</button>
+    <p>** 打开控制台查看运行结果</p>
+  </div>
+)
