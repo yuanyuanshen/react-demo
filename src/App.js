@@ -34,6 +34,10 @@ const routerMap = [
     pagePath: '#/profilerNew',
     pageTitle: 'ProfilerNew',
   },
+  {
+    pagePath: '#/decorators',
+    pageTitle: 'Decorators',
+  },
 ]
 
 export default class App extends React.Component {

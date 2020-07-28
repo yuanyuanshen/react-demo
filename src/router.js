@@ -9,6 +9,7 @@ import PureRedux from './components/Redux/PureRedux'
 import Connect from './components/Connect/Connect'
 import Profiler from './components/Profiler/Profiler'
 import ProfilerNew from './components/Profiler/NewApi'
+import Decorators from './components/Decorators/Decorators'
 
 const BasicRoute = () => (
   <HashRouter>
@@ -22,6 +23,7 @@ const BasicRoute = () => (
       <Route exact path="/connect" component={Connect} />
       <Route exact path="/profiler" component={Profiler} />
       <Route exact path="/profilerNew" component={ProfilerNew} />
+      <Route exact path="/decorators" component={Decorators} />
     </Switch>
   </HashRouter>
 )
