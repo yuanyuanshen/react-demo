@@ -1,3 +1,4 @@
+/* eslint-disable no-func-assign */
 import React from 'react'
 import { combineReducers, bindActionCreators, createStore } from 'redux'
 

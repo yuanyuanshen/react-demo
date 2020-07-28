@@ -12,7 +12,7 @@ const routerMap = [
   },
   {
     pagePath: '#/context',
-    pageTitle: 'Selector',
+    pageTitle: 'Context',
   },
   {
     pagePath: '#/snapshot',
@@ -25,6 +25,14 @@ const routerMap = [
   {
     pagePath: '#/connect',
     pageTitle: 'Connect',
+  },
+  {
+    pagePath: '#/profiler',
+    pageTitle: 'Profiler',
+  },
+  {
+    pagePath: '#/profilerNew',
+    pageTitle: 'ProfilerNew',
   },
 ]
 

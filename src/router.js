@@ -7,6 +7,8 @@ import Context from './components/LocaleSample/index'
 import Snapshot from './components/Snapshot/index'
 import PureRedux from './components/Redux/PureRedux'
 import Connect from './components/Connect/Connect'
+import Profiler from './components/Profiler/Profiler'
+import ProfilerNew from './components/Profiler/NewApi'
 
 const BasicRoute = () => (
   <HashRouter>
@@ -18,6 +20,8 @@ const BasicRoute = () => (
       <Route exact path="/snapshot" component={Snapshot} />
       <Route exact path="/pureredux" component={PureRedux} />
       <Route exact path="/connect" component={Connect} />
+      <Route exact path="/profiler" component={Profiler} />
+      <Route exact path="/profilerNew" component={ProfilerNew} />
     </Switch>
   </HashRouter>
 )
